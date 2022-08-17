@@ -42,7 +42,7 @@ function Login() {
   }
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <main className={styles.main}>
         <p>Welcome Back!</p>
         <form onSubmit={onSubmit} className={styles.form}>
