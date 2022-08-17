@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 import Navbar from "./components/Navbar"
+import PrivateRoute from "./components/PrivateRoute"
 
 import Home from "./pages/Home"
 import Login from "./pages/Login"
@@ -21,7 +22,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           <Route path="/forgot-pass" element={<ForgotPass />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
