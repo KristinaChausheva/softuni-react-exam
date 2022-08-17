@@ -1,17 +1,31 @@
 import { useNavigate, useLocation } from "react-router-dom"
+import styles from "./Navbar.module.css"
+import LoginButton from "./LoginButton"
 
 function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
   return (
-    <nav>
-      <ul>
-        <li onClick={() => navigate("/")}>Home</li>
-        <li onClick={() => navigate("/team")}>The Team</li>
-        <li onClick={() => navigate("/contact")}>Contact</li>
-        <li onClick={() => navigate("/login")}>Login</li>
-        <li onClick={() => navigate("/profile")}>Profile</li>
+    <nav className={styles.nav}>
+      <div className={styles.logo}>ELS</div>
+      <ul className={styles.ul}>
+        <li className={styles.li} onClick={() => navigate("/")}>
+          Home
+        </li>
+        <li className={styles.li} onClick={() => navigate("/team")}>
+          The Team
+        </li>
+        <li className={styles.li} onClick={() => navigate("/contact")}>
+          Contact
+        </li>
+        <li className={styles.li} onClick={() => navigate("/login")}>
+          Login
+        </li>
+        <li className={styles.li} onClick={() => navigate("/profile")}>
+          Profile
+        </li>
       </ul>
+      <LoginButton />
     </nav>
   )
 }
