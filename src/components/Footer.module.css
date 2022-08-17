@@ -21,8 +21,10 @@
 
 li {
   padding: 0.4em;
+  cursor: pointer;
 }
 
 li:first-child {
   font-weight: bolder;
+  cursor: default;
 }
