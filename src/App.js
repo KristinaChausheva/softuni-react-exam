@@ -13,6 +13,8 @@ import Profile from "./pages/Profile"
 import ForgotPass from "./pages/ForgotPass"
 import Team from "./pages/Team"
 import Contact from "./pages/Contact"
+import LiveCourse from "./pages/LiveCourse"
+import VideoCourse from "./pages/VideoCourse"
 
 function App() {
   return (
@@ -21,7 +23,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/live-course" element={<LiveCourse />} />
+          <Route path="/video-course" element={<VideoCourse />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />

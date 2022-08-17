@@ -18,8 +18,11 @@ function Navbar() {
         <li className={styles.li} onClick={() => navigate("/contact")}>
           Contact
         </li>
-        <li className={styles.li} onClick={() => navigate("/login")}>
-          Login
+        <li className={styles.li} onClick={() => navigate("/live-course")}>
+          Live Course
+        </li>
+        <li className={styles.li} onClick={() => navigate("/video-course")}>
+          Video Course
         </li>
         <li className={styles.li} onClick={() => navigate("/profile")}>
           Profile
