@@ -1,0 +1,28 @@
+.footer {
+  background-color: #feeeda;
+  /* height: 13em; */
+  margin-top: 13em;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.topUl {
+  display: flex;
+  width: 60vw;
+  list-style-type: none;
+  /* padding: 4em 13em; */
+}
+
+.bottomUl {
+  list-style-type: none;
+  width: 100vw;
+}
+
+li {
+  padding: 0.4em;
+}
+
+li:first-child {
+  font-weight: bolder;
+}

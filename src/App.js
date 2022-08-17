@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css"
 
 import Navbar from "./components/Navbar"
 import PrivateRoute from "./components/PrivateRoute"
+import Footer from "./components/Footer"
 
 import Home from "./pages/Home"
 import Login from "./pages/Login"
@@ -30,6 +31,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
+      <Footer />
       <ToastContainer />
     </>
   )
