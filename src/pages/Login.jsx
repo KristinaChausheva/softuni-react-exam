@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import { async } from "@firebase/util"
+
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
@@ -17,6 +20,25 @@ function Login() {
     }))
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      const auth = getAuth()
+
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      )
+      if (userCredential.user) {
+        navigate("/")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <div className="container">
@@ -24,7 +46,7 @@ function Login() {
           <p>Welcome Back!</p>
         </header>
         <main>
-          <form>
+          <form onSubmit={onSubmit}>
             <input
               type="email"
               className="emailInput"
