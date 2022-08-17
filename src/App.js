@@ -7,6 +7,8 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Profile from "./pages/Profile"
 import ForgotPass from "./pages/ForgotPass"
+import Team from "./pages/Team"
+import Contact from "./pages/Contact"
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Login />} />
           <Route path="/forgot-pass" element={<ForgotPass />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </>
