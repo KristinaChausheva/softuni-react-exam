@@ -1,0 +1,46 @@
+/* .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+.actions {
+  display: flex;
+  width: 39vw;
+  justify-content: space-between;
+  padding: 1em 0.5em;
+  align-items: center;
+}
+
+.emailInput,
+.passwordInput,
+.loginBtn {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.loginBtn {
+  cursor: pointer;
+  background-color: #2bb7e5;
+  color: #fff;
+  border: solid #2bb7e5 2px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+/* .acc {
+  text-align: start;
+} */

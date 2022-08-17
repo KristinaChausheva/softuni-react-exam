@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-import { async } from "@firebase/util"
+import styles from "./Login.module.css"
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -42,40 +42,41 @@ function Login() {
   }
 
   return (
-    <>
-      <div className="container">
-        <header>
-          <p>Welcome Back!</p>
-        </header>
-        <main>
-          <form onSubmit={onSubmit}>
-            <input
-              type="email"
-              className="emailInput"
-              placeholder="Email"
-              id="email"
-              value={email}
-              onChange={onChange}
-            />
+    <div className="container">
+      <main className={styles.main}>
+        <p>Welcome Back!</p>
+        <form onSubmit={onSubmit} className={styles.form}>
+          <input
+            type="email"
+            className={styles.emailInput}
+            placeholder="Email"
+            id="email"
+            value={email}
+            onChange={onChange}
+          />
 
-            <input
-              type="password"
-              className="passwordInput"
-              placeholder="Password"
-              id="password"
-              value={password}
-              onChange={onChange}
-            />
+          <input
+            type="password"
+            className={styles.passwordInput}
+            placeholder="Password"
+            id="password"
+            value={password}
+            onChange={onChange}
+          />
 
-            <Link to="forgot-pass">Fotgot Password</Link>
-
-            <button>Login</button>
-          </form>
-
-          <Link to="/register">Register</Link>
-        </main>
-      </div>
-    </>
+          <button className={styles.loginBtn}>Login</button>
+        </form>
+        <div className={styles.actions}>
+          <Link to="forgot-pass" className={styles.link}>
+            Fotgot Password
+          </Link>
+          <p className={styles.acc}>Dont have an account?</p>
+          <Link to="/register" className={styles.link}>
+            Register Now
+          </Link>
+        </div>
+      </main>
+    </div>
   )
 }
 
