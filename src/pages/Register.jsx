@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom"
 
 import { toast } from "react-toastify"
 
+import styles from "./Register.module.css"
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -59,15 +61,13 @@ function Register() {
 
   return (
     <>
-      <div className="container">
-        <header>
-          <p>Register!</p>
-        </header>
-        <main>
-          <form onSubmit={onSubmit}>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <p>Create an account</p>
+          <form onSubmit={onSubmit} className={styles.form}>
             <input
               type="text"
-              className="nameInput"
+              className={styles.emailInput}
               placeholder="Name"
               id="name"
               value={name}
@@ -75,7 +75,7 @@ function Register() {
             />
             <input
               type="email"
-              className="emailInput"
+              className={styles.emailInput}
               placeholder="Email"
               id="email"
               value={email}
@@ -84,17 +84,21 @@ function Register() {
 
             <input
               type="password"
-              className="passwordInput"
+              className={styles.passwordInput}
               placeholder="Password"
               id="password"
               value={password}
               onChange={onChange}
             />
 
-            <button>Register</button>
+            <button className={styles.loginBtn}>Register</button>
           </form>
-
-          <Link to="/login">Login</Link>
+          <div className={styles.actions}>
+            <p className={styles.acc}>Already an user?</p>
+            <Link to="/login" className={styles.link}>
+              Login
+            </Link>
+          </div>
         </main>
       </div>
     </>
