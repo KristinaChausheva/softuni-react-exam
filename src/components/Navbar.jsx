@@ -10,6 +10,7 @@ function Navbar() {
         <li onClick={() => navigate("/team")}>The Team</li>
         <li onClick={() => navigate("/contact")}>Contact</li>
         <li onClick={() => navigate("/login")}>Login</li>
+        <li onClick={() => navigate("/profile")}>Profile</li>
       </ul>
     </nav>
   )
