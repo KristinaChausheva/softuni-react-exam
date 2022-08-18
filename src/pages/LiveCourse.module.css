@@ -1,0 +1,57 @@
+.liveContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3em;
+}
+
+.title {
+  display: flex;
+}
+
+.h1 {
+  color: #35b7e5;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 3em;
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+
+.h2 {
+  margin-top: 3em;
+  font-size: 2.5em;
+}
+
+.h3 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+.important {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  margin: 0 10em 0 0;
+}
+
+.bottom {
+  margin-top: 3em;
+}
