@@ -1,0 +1,22 @@
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: #d9f4fd;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  margin: 7em 0;
+}
+
+.info {
+  /* margin-right: 5em; */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
