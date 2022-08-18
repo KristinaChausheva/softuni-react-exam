@@ -43,6 +43,13 @@
   justify-content: center;
 }
 
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
 .btn {
   width: 5em;
   margin-left: 12em;
@@ -65,7 +72,7 @@
 .or {
   border-radius: 50%;
   border: solid #27b8e6 1px;
-  width: 5em;
+  width: 5.2em;
   height: 5em;
   text-align: center;
   align-items: center;

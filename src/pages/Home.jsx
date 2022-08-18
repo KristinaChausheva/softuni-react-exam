@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom"
 
 import live from "../assets/live.png"
 import video from "../assets/video.png"
+import check from "../assets/check.svg"
+import checkb from "../assets/checkb.svg"
+import money from "../assets/money.svg"
 
 function Home() {
   const navigate = useNavigate()
@@ -61,26 +64,33 @@ function Home() {
         <h2 className={styles.h2}>Why you should Learn English with us?</h2>
         <div className={styles.reasons}>
           <div className={styles.card}>
-            <div>
+            <div className={styles.cardContent}>
+              <img src={check} alt="check" width={80} height={80} />
               <h5>Native language teacher</h5>
               <p>We offer only motivated and professional teachers.</p>
             </div>
           </div>
 
           <div className={styles.card}>
-            <h5>Reasonable prices + High Quality</h5>
-            <p>
-              It's important for us to offer high quality at reasonable prices.
-              Experience it yourself today!
-            </p>
+            <div className={styles.cardContent}>
+              <img src={money} alt="check" width={80} height={80} />
+              <h5>Reasonable prices + High Quality</h5>
+              <p>
+                It's important for us to offer high quality at reasonable
+                prices. Experience it yourself today!
+              </p>
+            </div>
           </div>
 
           <div className={styles.card}>
-            <h5>You are the priority</h5>
-            <p>
-              Your satisfication is highest priority for us. You can always
-              contact us if you have any issues.
-            </p>
+            <div className={styles.cardContent}>
+              <img src={checkb} alt="checkb" width={80} height={80} />
+              <h5>You are the priority</h5>
+              <p>
+                Your satisfication is highest priority for us. You can always
+                contact us if you have any issues.
+              </p>
+            </div>
           </div>
         </div>
 
