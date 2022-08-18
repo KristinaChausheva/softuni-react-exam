@@ -17,27 +17,36 @@ function Contact() {
         </div>
         <div className={styles.formContainer}>
           <h3>White a message</h3>
-          <form action="" className={styles.form}>
+          <form
+            action="https://formsubmit.co/k.chausheva@gmail.com"
+            className={styles.form}
+            method="POST"
+          >
             <input
               type="text"
               id="name"
+              name="name"
               className={styles.input}
               placeholder="Name"
             />
             <input
               type="email"
               id="email"
+              name="email"
               className={styles.input}
               placeholder="Email"
             />
+
             <textarea
-              name=""
+              name="message"
               id=""
               cols="30"
               rows="10"
               placeholder="Type your message here..."
             ></textarea>
-            <button className={styles.sendBtn}>Send</button>
+            <button className={styles.sendBtn} type="submit">
+              Send
+            </button>
           </form>
         </div>
       </div>
