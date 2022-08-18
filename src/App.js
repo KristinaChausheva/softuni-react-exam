@@ -26,6 +26,7 @@ function App() {
           <Route path="/live-course" element={<LiveCourse />} />
           <Route path="/video-course" element={<VideoCourse />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
