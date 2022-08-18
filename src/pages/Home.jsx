@@ -83,14 +83,28 @@ function Home() {
             </p>
           </div>
         </div>
+
+        <div id="courses"></div>
         <h2 className={styles.h2}>How would you like to learn?</h2>
         <div className={styles.questions}>
           <div className={styles.question}>
-            Do you like to learn live with other students?
+            <p>Do you like to learn live with other students?</p>
+            <button
+              className={styles.btn}
+              onClick={() => navigate("/live-course")}
+            >
+              Go!
+            </button>
           </div>
           <div className={styles.or}>OR</div>
           <div className={styles.question}>
-            Do you like to learn by yourself at your own pace?
+            <p>Do you like to learn by yourself at your own pace?</p>
+            <button
+              className={styles.btn}
+              onClick={() => navigate("/video-course")}
+            >
+              Go!
+            </button>
           </div>
         </div>
 

@@ -15,11 +15,15 @@ function Footer() {
         <ul className={styles.bottomUl}>
           <li>Menu</li>
           <li onClick={() => navigate("/")}>Home</li>
-          <li onClick={() => navigate("/")}>Courses</li>
+          <li>
+            <a href="#courses"> Courses</a>
+          </li>
           <li onClick={() => navigate("/")}>Impressum</li>
         </ul>
         <ul className={styles.bottomUl}>
           <li>Courses</li>
+          <li onClick={() => navigate("/live-courses")}>Live Courses</li>
+          <li onClick={() => navigate("/video-courses")}>Video Courses</li>
         </ul>
       </ul>
     </div>
