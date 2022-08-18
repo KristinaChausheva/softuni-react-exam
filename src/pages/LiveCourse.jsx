@@ -18,8 +18,8 @@ function LiveCourse() {
         </div>
       </div>
       <div className={styles.expect}>
-        <h1 className={styles.h2}>What can you expect from my live courses?</h1>
-        <ul>
+        <h1 className={styles.h1}>What can you expect from my live courses?</h1>
+        <ul className={styles.ulExpect}>
           <li>Expert native language teachers</li>
           <li>Engaging in interactive sessions</li>
           <li>Max 10 participants</li>
@@ -36,7 +36,13 @@ function LiveCourse() {
           <div>Total of 48 sessions</div>
           <div>Study material approx. 20 &#8364;</div>
         </div>
-        <img src={woman} alt="" width={350} height={250} />
+        <img
+          src={woman}
+          alt=""
+          width={350}
+          height={250}
+          className={styles.img}
+        />
       </div>
 
       <div className={styles.bottom}>

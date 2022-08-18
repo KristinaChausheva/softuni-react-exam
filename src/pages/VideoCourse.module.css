@@ -13,7 +13,7 @@
 
 .titles {
   display: flex;
-  margin-top: 3em;
+  margin-top: 6em;
 }
 
 .h1 {
@@ -26,4 +26,44 @@
   font-size: 3em;
   margin-left: 0.5em;
   font-weight: bold;
+}
+
+.expect {
+  font-size: 1.2em;
+  width: 65vw;
+  margin-top: 5em;
+}
+
+.ulExpect {
+  font-size: 1.4em;
+  margin-left: 4em;
+}
+
+.steps {
+  display: flex;
+  width: 55vw;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 55vw;
+  font-size: 1.2em;
+}
+
+.img {
+  margin-top: 3em;
+  margin-left: 3em;
+}
+
+.prerequisities {
+  display: flex;
+  justify-content: flex-start;
+  width: 60vw;
+}
+
+.prereq {
+  list-style-type: none;
+  font-size: 1.4em;
 }
