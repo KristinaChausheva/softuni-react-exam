@@ -14,54 +14,33 @@ import Settings from "../components/Settings"
 function Profile() {
   const auth = getAuth()
   const navigate = useNavigate()
-  const [changeDetails, setChangeDetails] = useState(false)
+  // const [changeDetails, setChangeDetails] = useState(false)
   const [showDetails, setShowDetails] = useState(true)
   const [showSettings, setShowSettings] = useState(false)
-  const [formData, setFormData] = useState({
-    name: auth.currentUser.displayName,
-    email: auth.currentUser.email,
-  })
+  // const [formData, setFormData] = useState({
+  //   name: auth.currentUser.displayName,
+  //   email: auth.currentUser.email,
+  //   timestamp: auth.currentUser.metadata.creationTime,
+  // })
 
   // console.log(auth.currentUser)
   // console.log(auth.currentUser.metadata.creationTime)
 
-  const { name, email } = formData
+  const userName = auth.currentUser.displayName
 
   const onLogout = () => {
     auth.signOut()
     navigate("/")
   }
 
-  // const onSubmit = async () => {
-  //   try {
-  //     if (auth.currentUser.displayName !== name) {
-  //       await updateProfile(auth.currentUser, {
-  //         displayName: name,
-  //       })
-
-  //       const userRef = doc(db, "users", auth.currentUser.uid)
-  //       await updateDoc(userRef, { name })
-  //     }
-  //   } catch (error) {
-  //     toast.error("Could not update profile details")
-  //   }
-  // }
-
-  // const onChange = (e) => {
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [e.target.id]: e.target.value,
-  //   }))
-  // }
-
-  const onDetails = (prevState) => {
+  const onDetails = () => {
     if (!showDetails) {
       setShowDetails((prevState) => !prevState)
       setShowSettings((prevState) => !prevState)
     }
   }
 
-  const onSettings = (prevState) => {
+  const onSettings = () => {
     if (!showSettings) {
       setShowSettings((prevState) => !prevState)
       setShowDetails((prevState) => !prevState)
@@ -70,7 +49,7 @@ function Profile() {
 
   return (
     <div className={styles.profile}>
-      <div className={styles.greet}>Hello, {name}</div>
+      <div className={styles.greet}>Hello, {userName}</div>
       <div className={styles.div}></div>
       <div className={styles.btns}>
         <div onClick={onDetails} className={styles.details}>

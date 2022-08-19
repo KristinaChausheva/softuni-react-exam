@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 34vw;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.span {
+  margin: 0.5em 0;
+  min-height: 2em;
+}

@@ -11,21 +11,29 @@ function Settings() {
   const auth = getAuth()
   const [changeDetails, setChangeDetails] = useState(false)
   const [formData, setFormData] = useState({
-    name: auth.currentUser.displayName,
+    userName: auth.currentUser.displayName,
+    name: "",
     email: auth.currentUser.email,
+    skills: [],
+    goals: [],
+    timestamp: auth.currentUser.metadata.creationTime,
   })
 
-  const { name, email, timestamp } = formData
+  const { userName, name, email, skills, goals, timestamp } = formData
+
+  console.log(auth.currentUser.displayName)
 
   const onSubmit = async () => {
     try {
-      if (auth.currentUser.displayName !== name) {
+      if (auth.currentUser.displayName !== userName) {
         await updateProfile(auth.currentUser, {
-          displayName: name,
+          displayName: userName,
         })
-
+        console.log("here")
         const userRef = doc(db, "users", auth.currentUser.uid)
-        await updateDoc(userRef, { name })
+        await updateDoc(userRef, { ...formData })
+        console.log("here1")
+        toast.done()
       }
     } catch (error) {
       toast.error("Could not update profile details")
@@ -39,39 +47,54 @@ function Settings() {
     }))
   }
 
+  console.log(formData)
+
   return (
     <div>
-      Settings
-      <main>
-        <div className={styles.profileDetails}>
-          <p
-            onClick={() => {
-              changeDetails && onSubmit()
-              setChangeDetails((prevState) => !prevState)
-            }}
-          >
-            {changeDetails ? "Done" : "Change Personal Details"}
-          </p>
-        </div>
+      <div className={styles.profileCard}>
+        <input
+          type="text"
+          id="userName"
+          placeholder="Username"
+          //   disabled={!changeDetails}
+          value={userName}
+          onChange={onChange}
+        />
 
-        <div className="profileCard">
-          <input
-            type="text"
-            id="name"
-            disabled={!changeDetails}
-            value={name}
-            onChange={onChange}
-          />
+        <input
+          type="text"
+          id="name"
+          placeholder="name"
+          //   disabled={!changeDetails}
+          value={name}
+          onChange={onChange}
+        />
 
-          {/* <input
-            type="text"
-            id="email"
-            disabled={!changeDetails}
-            value={email}
-            onChange={onChange}
-          /> */}
-        </div>
-      </main>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          disabled
+          value={email}
+          onChange={onChange}
+        />
+        <input
+          type="text"
+          id="skills"
+          placeholder="Skills"
+          value={skills}
+          onChange={onChange}
+        />
+        <input
+          type="text"
+          id="goals"
+          placeholder="Goals"
+          value={goals}
+          onChange={onChange}
+        />
+      </div>
+
+      <div onClick={onSubmit}>Change settings</div>
     </div>
   )
 }
