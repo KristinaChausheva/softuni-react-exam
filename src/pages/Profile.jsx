@@ -14,17 +14,8 @@ import Settings from "../components/Settings"
 function Profile() {
   const auth = getAuth()
   const navigate = useNavigate()
-  // const [changeDetails, setChangeDetails] = useState(false)
   const [showDetails, setShowDetails] = useState(true)
   const [showSettings, setShowSettings] = useState(false)
-  // const [formData, setFormData] = useState({
-  //   name: auth.currentUser.displayName,
-  //   email: auth.currentUser.email,
-  //   timestamp: auth.currentUser.metadata.creationTime,
-  // })
-
-  // console.log(auth.currentUser)
-  // console.log(auth.currentUser.metadata.creationTime)
 
   const userName = auth.currentUser.displayName
 

@@ -1,5 +1,5 @@
 import { getAuth, updateProfile } from "firebase/auth"
-import { updateDoc, doc } from "firebase/firestore"
+import { updateDoc, doc, getDoc } from "firebase/firestore"
 import { db } from "../firebase.config"
 import { useEffect, useState } from "react"
 
@@ -9,13 +9,21 @@ function Details() {
   const auth = getAuth()
 
   const [formData, setFormData] = useState({
-    userName: auth.currentUser.displayName,
-    name: auth.currentUser.name,
-    email: auth.currentUser.email,
-    skills: auth.currentUser.skills,
-    goals: auth.currentUser.goals,
-    timestamp: auth.currentUser.metadata.creationTime,
+    userName: "",
+    name: "",
+    skills: "",
+    goals: "",
   })
+
+  const fetchData = async () => {
+    const docRef = doc(db, "users", auth.currentUser.uid)
+    const docSnap = await getDoc(docRef)
+    setFormData(docSnap.data())
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [setFormData])
 
   const { userName, name, email, skills, goals, timestamp } = formData
   return (
