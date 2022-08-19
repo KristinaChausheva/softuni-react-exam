@@ -1,0 +1,28 @@
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3em 0;
+  height: 10em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  margin: 1em 0;
+}
+
+.resetBtn {
+  cursor: pointer;
+  background-color: #2bb7e5;
+  color: #fff;
+  border: solid #2bb7e5 2px;
+  margin: 1em 0;
+}

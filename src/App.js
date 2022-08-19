@@ -33,6 +33,7 @@ function App() {
           <Route path="/forgot-pass" element={<ForgotPass />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login/forgot-pass" element={<ForgotPass />} />
         </Routes>
         <Footer />
       </Router>
