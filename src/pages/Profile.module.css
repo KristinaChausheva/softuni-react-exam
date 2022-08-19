@@ -1,0 +1,36 @@
+.profile {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.greet {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.div {
+  border-bottom: solid 1px gray;
+  margin-bottom: 3em;
+  height: 1px;
+  width: 100vw;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* width: 50vw; */
+}
+
+.details,
+.settings,
+.logout {
+  width: 10em;
+  height: 2em;
+  background-color: aqua;
+  border: solid 1px black;
+  text-align: center;
+  padding-top: 0.5em;
+}
