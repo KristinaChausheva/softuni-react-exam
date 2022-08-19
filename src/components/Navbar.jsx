@@ -2,9 +2,13 @@ import { useNavigate, useLocation } from "react-router-dom"
 import styles from "./Navbar.module.css"
 import LoginButton from "./LoginButton"
 
+import { useAuthStatus } from "../hooks/useAuthStatus"
+
 function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { loggedIn, checkingStatus } = useAuthStatus()
+
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>ELS</div>
@@ -24,11 +28,14 @@ function Navbar() {
         <li className={styles.li} onClick={() => navigate("/video-course")}>
           Video Course
         </li>
+      </ul>
+      {!loggedIn ? (
+        <LoginButton />
+      ) : (
         <li className={styles.li} onClick={() => navigate("/profile")}>
           Profile
         </li>
-      </ul>
-      <LoginButton />
+      )}
     </nav>
   )
 }
