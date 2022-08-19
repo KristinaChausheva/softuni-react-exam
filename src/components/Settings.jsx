@@ -21,9 +21,8 @@ function Settings() {
   const fetchData = async () => {
     const docRef = doc(db, "users", auth.currentUser.uid)
     const docSnap = await getDoc(docRef)
-    const { userName, name, skills, goals } = docSnap.data()
+    // const { userName, name, skills, goals } = docSnap.data()
     setFormData(docSnap.data())
-    console.log(formData)
   }
 
   useEffect(() => {
@@ -41,11 +40,10 @@ function Settings() {
         await updateProfile(auth.currentUser, {
           displayName: userName,
         })
-        console.log("here")
       }
       const userRef = doc(db, "users", auth.currentUser.uid)
       await updateDoc(userRef, { userName, name, skills, goals })
-      console.log("here1")
+
       toast.success("Success Notification")
       setIsLoading(false)
     } catch (error) {
@@ -53,8 +51,6 @@ function Settings() {
       setIsLoading(false)
     }
   }
-
-  console.log(isLoading)
 
   const onChange = (e) => {
     e.preventDefault()
@@ -67,27 +63,28 @@ function Settings() {
   //   console.log(formData)
 
   return (
-    <div>
-      <div className={styles.profileCard}>
-        <input
-          type="text"
-          id="userName"
-          placeholder="Username"
-          //   disabled={!changeDetails}
-          value={userName}
-          onChange={onChange}
-        />
+    <div className={styles.profileCard}>
+      <input
+        type="text"
+        id="userName"
+        placeholder="Username"
+        //   disabled={!changeDetails}
+        value={userName}
+        onChange={onChange}
+        className={styles.input}
+      />
 
-        <input
-          type="text"
-          id="name"
-          placeholder="name"
-          //   disabled={!changeDetails}
-          value={name}
-          onChange={onChange}
-        />
+      <input
+        type="text"
+        id="name"
+        placeholder="name"
+        //   disabled={!changeDetails}
+        value={name}
+        onChange={onChange}
+        className={styles.input}
+      />
 
-        {/* <input
+      {/* <input
           type="email"
           id="email"
           placeholder="Email"
@@ -95,23 +92,28 @@ function Settings() {
           value={email}
           onChange={onChange}
         /> */}
-        <input
-          type="text"
-          id="skills"
-          placeholder="Skills"
-          value={skills}
-          onChange={onChange}
-        />
-        <input
-          type="text"
-          id="goals"
-          placeholder="Goals"
-          value={goals}
-          onChange={onChange}
-        />
-      </div>
+      <input
+        type="text"
+        id="skills"
+        placeholder="Skills"
+        value={skills}
+        onChange={onChange}
+        className={styles.input}
+      />
+      <input
+        type="text"
+        id="goals"
+        placeholder="Goals"
+        value={goals}
+        onChange={onChange}
+        className={styles.input}
+      />
 
-      <button onClick={onSubmit} disabled={isLoading}>
+      <button
+        onClick={onSubmit}
+        disabled={isLoading}
+        className={styles.loginBtn}
+      >
         Change settings
       </button>
     </div>

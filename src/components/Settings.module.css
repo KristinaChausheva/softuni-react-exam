@@ -1,4 +1,18 @@
 .profileCard {
   display: flex;
   flex-direction: column;
+  width: 35vw;
+}
+.input {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.loginBtn {
+  cursor: pointer;
+  background-color: #2bb7e5;
+  color: #fff;
+  border: solid #2bb7e5 2px;
+  margin: 0.5em;
+  padding: 0.5em;
 }
