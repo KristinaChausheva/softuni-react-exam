@@ -15,6 +15,7 @@ import Team from "./pages/Team"
 import Contact from "./pages/Contact"
 import LiveCourse from "./pages/LiveCourse"
 import VideoCourse from "./pages/VideoCourse"
+import Admin from "./pages/Admin"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login/forgot-pass" element={<ForgotPass />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         <Footer />
       </Router>

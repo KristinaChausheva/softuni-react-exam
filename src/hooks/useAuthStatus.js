@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth"
 
 export function useAuthStatus() {
   const [loggedIn, setloggedIn] = useState(false)
-  const [isAdmin, setisAdmin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
   const [checkingStatus, setCheckingStatus] = useState(true)
   const isMounted = useRef(true)
 
@@ -14,6 +14,10 @@ export function useAuthStatus() {
         if (user) {
           setloggedIn(true)
         }
+        if (user.email === "admin@admin.com") {
+          setIsAdmin(true)
+          console.log(isAdmin)
+        }
         setCheckingStatus(false)
       })
     }
@@ -22,7 +26,7 @@ export function useAuthStatus() {
       isMounted.current = false
     }
   }, [isMounted])
-  return { loggedIn, checkingStatus }
+  return { loggedIn, checkingStatus, isAdmin }
 }
 
 // export default useAuthStatus

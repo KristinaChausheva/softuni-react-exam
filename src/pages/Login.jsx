@@ -32,9 +32,12 @@ function Login() {
         email,
         password
       )
-      if (userCredential.user) {
+      if (userCredential.user.email === "admin@admin.com") {
+        navigate("/admin")
+      } else if (userCredential.user) {
         navigate("/")
       }
+      console.log(userCredential.user.email)
     } catch (error) {
       console.log(error)
       toast.error("Bad User Credentials")
