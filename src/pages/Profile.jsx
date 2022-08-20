@@ -21,7 +21,9 @@ function Profile() {
 
   const onLogout = () => {
     auth.signOut()
+
     navigate("/")
+    window.location.reload(false)
   }
 
   const onDetails = () => {
