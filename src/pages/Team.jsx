@@ -27,7 +27,6 @@ function Team() {
             id: doc.id,
             data: doc.data(),
           })
-          // teachers.push(doc.data())
           // console.log(doc.data())
         })
 

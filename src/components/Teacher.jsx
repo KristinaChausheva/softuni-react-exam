@@ -1,9 +1,13 @@
 import styles from "./Teacher.module.css"
-import person1 from "../assets/person1.png"
+import { useNavigate } from "react-router-dom"
+
+import { useAuthStatus } from "../hooks/useAuthStatus"
 
 function Teacher({ id, teachers }) {
-  console.log(teachers.img)
-  console.log()
+  const navigate = useNavigate()
+  const { loggedIn, checkingStatus, isAdmin } = useAuthStatus()
+
+  console.log(id)
   const imgUrl = teachers.img
   // console.log(require(imgUrl))
   return (
@@ -12,17 +16,16 @@ function Teacher({ id, teachers }) {
         <h2 className={styles.h2}>{teachers.title}</h2>
         <div className={styles.desc}>{teachers.desc}</div>
       </div>
-      <div
-        className={styles.person}
-        // style={{ backgroundImage: `${imgUrl}` }}
-      >
+      <div className={styles.person}>
         <img
           src={`/assets/${imgUrl}`}
-          // src={`require(${imgUrl})`}
-          // src={require("../assets/person1.png")}
           alt={teachers.title}
           className={styles.img}
         />
+
+        {isAdmin ? (
+          <button onClick={() => navigate(`/edit-teacher/${id}`)}>Edit</button>
+        ) : null}
       </div>
     </div>
   )

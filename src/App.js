@@ -18,6 +18,8 @@ import VideoCourse from "./pages/VideoCourse"
 import Admin from "./pages/Admin"
 import Cards from "./pages/Cards"
 
+import EditTeacher from "./pages/EditTeacher"
+
 function App() {
   return (
     <>
@@ -34,6 +36,7 @@ function App() {
           </Route>
           <Route path="/forgot-pass" element={<ForgotPass />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/edit-teacher/:teacherId" element={<EditTeacher />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login/forgot-pass" element={<ForgotPass />} />
           <Route path="/admin" element={<Admin />} />
