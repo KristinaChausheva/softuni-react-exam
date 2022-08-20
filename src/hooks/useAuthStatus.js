@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth"
 
 export function useAuthStatus() {
   const [loggedIn, setloggedIn] = useState(false)
+  const [isAdmin, setisAdmin] = useState(false)
   const [checkingStatus, setCheckingStatus] = useState(true)
   const isMounted = useRef(true)
 

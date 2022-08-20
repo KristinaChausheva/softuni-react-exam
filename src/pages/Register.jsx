@@ -20,6 +20,10 @@ function Register() {
     email: "",
     password: "",
     name: "",
+    userName: "",
+    timestamp: "",
+    skills: "",
+    goals: "",
   })
   const { email, password, name } = formData
 

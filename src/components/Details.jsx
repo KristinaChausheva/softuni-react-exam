@@ -19,13 +19,17 @@ function Details() {
     const docRef = doc(db, "users", auth.currentUser.uid)
     const docSnap = await getDoc(docRef)
     setFormData(docSnap.data())
+
+    console.log(docSnap.data().timestamp.toDate())
   }
 
   useEffect(() => {
     fetchData()
   }, [setFormData])
 
-  const { userName, name, email, skills, goals, timestamp } = formData
+  let { userName, name, email, skills, goals, timestamp } = formData
+  // timestamp = timestamp.toDate()
+  // console.log(timestamp)
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -42,7 +46,7 @@ function Details() {
         <span className={styles.span}>{email}</span>
         <span className={styles.span}>{skills}</span>
         <span className={styles.span}>{goals}</span>
-        <span className={styles.span}>{timestamp}</span>
+        {/* <span className={styles.span}>{timestamp.toDate()}</span> */}
       </div>
     </div>
   )
