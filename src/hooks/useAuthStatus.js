@@ -16,7 +16,7 @@ export function useAuthStatus() {
         }
         if (user.email === "admin@admin.com") {
           setIsAdmin(true)
-          console.log(isAdmin)
+          // console.log(isAdmin)
         }
         setCheckingStatus(false)
       })

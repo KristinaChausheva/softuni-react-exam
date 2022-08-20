@@ -20,7 +20,7 @@ function Details() {
     const docSnap = await getDoc(docRef)
     setFormData(docSnap.data())
 
-    console.log(docSnap.data().timestamp.toDate())
+    console.log(docSnap.data())
   }
 
   useEffect(() => {

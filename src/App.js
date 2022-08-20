@@ -16,6 +16,7 @@ import Contact from "./pages/Contact"
 import LiveCourse from "./pages/LiveCourse"
 import VideoCourse from "./pages/VideoCourse"
 import Admin from "./pages/Admin"
+import Cards from "./pages/Cards"
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login/forgot-pass" element={<ForgotPass />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/cards" element={<Cards />} />
         </Routes>
         <Footer />
       </Router>

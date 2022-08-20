@@ -1,0 +1,26 @@
+.courses {
+  display: flex;
+  margin: 3em;
+  padding: 0;
+}
+.card {
+  border: solid 1px gray;
+  border-radius: 1em;
+  width: 15em;
+  min-height: 7em;
+  background-color: #fff;
+  margin: 0 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn {
+  width: 5em;
+  margin-left: 12em;
+  background-color: #2bb7e5;
+  color: #fff;
+  border-radius: 0.5em;
+  border: solid #2bb7e5;
+  padding: 0.5em 1em;
+}
