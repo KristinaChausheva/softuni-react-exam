@@ -1,0 +1,38 @@
+.instructor {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  padding: 1em;
+  margin: 1em;
+}
+
+.text {
+  margin-right: 1em;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.h2 {
+  font-size: 2em;
+}
+
+.desc {
+  font-size: 1.5em;
+}
+
+.person {
+  border: solid 1px black;
+  border-radius: 50%;
+  width: fit-content;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  /* background: url("../assets/person1.png"); */
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: -1;
+}
