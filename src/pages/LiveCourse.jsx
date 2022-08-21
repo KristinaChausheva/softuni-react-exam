@@ -45,8 +45,8 @@ function LiveCourse() {
         />
       </div>
 
-      <div className={styles.bottom}>
-        <img src={common} alt="" />
+      <div>
+        <img src={common} alt="" className={styles.bottom} />
       </div>
     </div>
   )

@@ -63,14 +63,38 @@
 }
 
 .info {
-  margin: 0 10em 0 0;
+  margin: 0;
   font-size: 1.4em;
 }
-
 .img {
   margin-top: 3em;
 }
 
 .bottom {
   margin-top: 3em;
+}
+
+@media screen and (max-width: 1120px) {
+  .title,
+  .h1,
+  .price {
+    font-size: 1.3em;
+  }
+  .important {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    width: 100vw;
+  }
+
+  .info {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 830px) {
+  .bottom {
+    width: 99vw;
+    /* padding: 1em; */
+  }
 }
