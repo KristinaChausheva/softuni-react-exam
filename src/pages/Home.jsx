@@ -9,12 +9,10 @@ import check from "../assets/check.svg"
 import checkb from "../assets/checkb.svg"
 import money from "../assets/money.svg"
 
-import Slider from "../components/Slider"
-
 function Home() {
   const navigate = useNavigate()
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.container}>
       <Un className={styles.svg}></Un>
       <div className={styles.titles}>
         <h1 className={styles.h1}>
@@ -22,10 +20,10 @@ function Home() {
         </h1>
         <h4>Live Courses, Live Exam Preparations and Video Courses</h4>
         <p> Our Courses</p>
-        {/* <Slider /> */}
+
         <div className={styles.courses}>
           <div className={styles.card}>
-            <div>
+            <div className={styles.cardContent}>
               <h5>Live Courses</h5>
               <p>199 &#8364;</p>
             </div>
@@ -38,7 +36,7 @@ function Home() {
           </div>
 
           <div className={styles.card}>
-            <div>
+            <div className={styles.cardContent}>
               <h5>Live Exam Preparation</h5>
               <p>99 &#8364;</p>
             </div>
@@ -51,7 +49,7 @@ function Home() {
           </div>
 
           <div className={styles.card}>
-            <div>
+            <div className={styles.cardContent}>
               <h5>Video Course</h5>
               <p>49 &#8364;</p>
             </div>

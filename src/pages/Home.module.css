@@ -1,5 +1,9 @@
+.container {
+  display: flex;
+}
+
 .titles {
-  margin: 5em 20%;
+  margin: 5em auto;
 }
 
 .svg {
@@ -20,12 +24,16 @@
 
 .courses {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
 .reasons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
@@ -36,11 +44,12 @@
   width: 15em;
   min-height: 7em;
   background-color: #fff;
-  margin: 0 1em;
+  margin: 1em;
   padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cardContent {
@@ -62,6 +71,10 @@
 
 .questions {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .question {
@@ -85,6 +98,9 @@
 
 .advantages {
   margin-top: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .liveAdv {
@@ -93,4 +109,60 @@
 
 .videoAdv {
   display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+
+  .or {
+    width: 3.2em;
+    height: 3em;
+    font-size: 1em;
+    line-height: 3em;
+    margin-top: 5em;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .card {
+    border: solid 1px gray;
+    border-radius: 1em;
+    width: 13em;
+    min-height: 7em;
+    background-color: #fff;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    margin-left: 10em;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .titles,
+  .courses,
+  .reasons,
+  .advantages {
+    margin: 1em;
+  }
+  .card {
+    width: 15em;
+    min-height: 7em;
+  }
+
+  .or {
+    display: none;
+  }
+
+  .liveAdv,
+  .videoAdv {
+    flex-direction: column;
+  }
 }

@@ -52,52 +52,6 @@ function Team() {
           <Teacher teachers={teacher.data} id={teacher.id} key={teacher.id} />
         ))
       )}
-
-      {/* <Teacher teachers={teachers.data} id={teachers.id} key={teachers.id} /> */}
-      {/* <div className={styles.instructor}>
-        <div className={styles.text}>
-          <h2 className={styles.h2}>
-            Hi, I am John Doe, your English teacher.
-          </h2>
-          <div className={styles.desc}>
-            2007-2010 DaF-Studium Uni Greifswald, over 10 yeras of experience as
-            an English language specialist at EALTS Exams
-          </div>
-        </div>
-        <div className={styles.person}>
-          <img src={person1} alt="" className={styles.img} />
-        </div>
-      </div> */}
-      {/* 
-      <div className={styles.instructor}>
-        <div className={styles.text}>
-          <h2 className={styles.h2}>
-            Hi, I am Jane Doe, your English teacher.
-          </h2>
-          <div className={styles.desc}>
-            2007-2010 DaF-Studium Uni Greifswald, over 10 yeras of experience as
-            an English language specialist at EALTS Exams
-          </div>
-        </div>
-        <div className={styles.person}>
-          <img src={person2} alt="" className={styles.img} />
-        </div>
-      </div>
-
-      <div className={styles.instructor}>
-        <div className={styles.text}>
-          <h2 className={styles.h2}>
-            Hi, I am Joan Doe, your English teacher.
-          </h2>
-          <div className={styles.desc}>
-            2007-2010 DaF-Studium Uni Greifswald, over 10 yeras of experience as
-            an English language specialist at EALTS Exams
-          </div>
-        </div>
-        <div className={styles.person}>
-          <img src={person3} alt="" className={styles.img} />
-        </div>
-      </div> */}
     </div>
   )
 }
