@@ -3,11 +3,23 @@ import styles from "./Navbar.module.css"
 import LoginButton from "./LoginButton"
 
 import { useAuthStatus } from "../hooks/useAuthStatus"
+import hamburger from "../assets/hamburger.jpg"
 
 function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
   const { loggedIn, checkingStatus } = useAuthStatus()
+
+  const onShowNav = () => {
+    const ul = document.querySelector("ul")
+    if (ul.style.display === "none") {
+      ul.style.display = "block"
+    } else {
+      ul.style.display = "none"
+    }
+
+    console.log(ul.style.display)
+  }
 
   return (
     <nav className={styles.nav}>
@@ -28,14 +40,18 @@ function Navbar() {
         <li className={styles.li} onClick={() => navigate("/video-course")}>
           Video Course
         </li>
+
+        {!loggedIn ? (
+          <LoginButton />
+        ) : (
+          <li className={styles.li} onClick={() => navigate("/profile")}>
+            Profile
+          </li>
+        )}
       </ul>
-      {!loggedIn ? (
-        <LoginButton />
-      ) : (
-        <li className={styles.li} onClick={() => navigate("/profile")}>
-          Profile
-        </li>
-      )}
+      <div className={styles.imgHolder} onClick={onShowNav}>
+        <img src={hamburger} className={styles.hamburger} />
+      </div>
     </nav>
   )
 }

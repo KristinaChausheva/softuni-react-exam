@@ -13,6 +13,7 @@
   margin: 0 0 0 5em;
   padding: 0;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   width: 50vw;
   height: 5em;
@@ -22,4 +23,36 @@
   text-align: center;
   align-items: center;
   cursor: pointer;
+}
+
+/* .li:last-child {
+  width: 3em;
+} */
+
+.imgHolder {
+  margin: 1em 0;
+}
+
+.hamburger {
+  display: none;
+  width: 3em;
+  height: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+  .ul {
+    flex-direction: column;
+    margin: 5em 0 0 0;
+    width: 60vw;
+    z-index: 11;
+    display: none;
+  }
+  .li {
+    width: 50vw;
+    font-size: 2em;
+    background-color: #feeeda;
+  }
 }
