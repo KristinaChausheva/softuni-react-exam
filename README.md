@@ -1,36 +1,17 @@
-// STORAGE RULES
+To start the project:
 
-rules*version = '2';
-service firebase.storage {
-match /b/{bucket}/o {
-match /{allPaths=\**} {
-allow read;
-allow write: if
-request.auth != null &&
-request.resource.size < 2 _ 1024 _ 1024 && //2MB
-request.resource.contentType.matches('image/.\_')
-}
-}
-}
+1. download or fork the code
+2. install dependancies
+3. run "npm install" in terminal
+4. admin credentials are:
+   - email: admin@admin.com,
+   - password: 123456
 
-// FIRESTORE RULES
+if you want to create attach your own firebase to the react project:
 
-rules_version = '2';
-service cloud.firestore {
-match /databases/{database}/documents {
-// Listings
-match /reviews/{review} {
-allow read;
-allow create: if request.auth != null && request.resource.data.imgUrls.size() < 7;
-allow delete: if resource.data.userRef == request.auth.uid;
-}
+1. create a firebase project from firebase console
+2. add your own credentials in the firebase.config.js file
+3. create collections "users" and "teachers"
+4. set firestore rules accordingly to allow CRUD operation
 
-    // Users
-    match /users/{user} {
-    	allow read;
-    	allow create;
-    	allow update: if request.auth.uid == user
-    }
-
-}
-}
+well... enjoy :)
